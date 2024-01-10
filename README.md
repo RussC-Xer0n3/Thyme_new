@@ -5,6 +5,14 @@ It is a neural network which makes use of the modified markov decision process a
 ## What does it do?
 At present unknown, it calculates and should be able to make predictions based on own logic. The original concept is to make visual predictions on human behaviour by anticipating what will happen in the future within a window of time. However, the logistics of getting all the satellite feeds in at once and making a prediction on human behaviour are astronomical and so what we have here is simply a semi-functioning testbed which needs rebuilding and reimplementing once we know how the new mdp performs as a learning rate according to the time error corrections. 
 
+At present, it doesn't do anything....
+
+## what needs to be done?
+Give it some data via a local vm server outputting network data on 127.0.0.1:123 
+
+## why?
+well, to see what happens of course.........
+
 # Contents
 
 ## AIHelpers
