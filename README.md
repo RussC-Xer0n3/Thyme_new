@@ -11,7 +11,7 @@ At present, it doesn't do anything....
 Give it some data via a local vm server outputting network data on 127.0.0.1:123 
 
 ## why?
-well, to see what happens of course.........
+well, to see what happens of course......... On a more serious note, for performance analysis, benchmarking, data analysis correlating to input via output and the predictability of output verses actual future output. Of course it is modifiable, of course you can take a look into it yourself and of course you can modify the code if you want/need to. Just repost and reference please.  
 
 # Contents
 
