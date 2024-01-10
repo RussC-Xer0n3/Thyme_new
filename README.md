@@ -9,18 +9,28 @@ At present unknown, it calculates and should be able to make predictions based o
 
 ## AIHelpers
 thresholds to report 1 or 0 based on true or false in the Y(n) function
+
 Y(n) a boolean logic function which reports to reward, probability and mdp
+
 reward function
+
 probability function
+
 mdp function
 
 ## ThymeHelpers
 A() a sphere based on radius and dimension (in this case three dimensional)
+
 C() a spherical sigmoid which takes whitenoise and A as an argument to generate a constant for error calculus
+
 SIG() our own sigmoid based on the spherical nature of C()
+
 SIGMOID() standard sigmoid
+
 Cost() a modified cost function
+
 GradientDescent() modified gradient of descent for calculating error rates and learning rates
+
 MSEFullCost() own mean squared error cost function
 
 ## Program
@@ -28,8 +38,11 @@ Our main program entry point which makes use of a boilerplate tcp socket on the 
 
 ## thyme
 approximation of time velocity v()
+
 Approximation calculus which makes use of our white noise function derived from c() [a spherical sigmoid], predicted output and target output in a three dimensional radius
+
 past time calculus
+
 future time calculus
 
 ## NeuralNetwork
