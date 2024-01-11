@@ -48,8 +48,8 @@ namespace Thyme_new
 
             // Implement C:whitenoise, FT:predicted, PT:actual and T:time here
             double[] IN = whitenoise;
-            double PT;
-            double FT;
+            double[] PT = null;
+            double[] FT = null;
             double[] T = null;
             double c = ThymeHelpers.C(whitenoise, A);
             double V = v();
@@ -65,17 +65,17 @@ namespace Thyme_new
             }
              */
             for (int k = 0; k < predicted.Length; k++) {
-                PT = predicted[k] % c / whitenoise[k];
+                PT[k] = predicted[k] % c / whitenoise[k];
             }
 
             for (int l = 0; l < whitenoise.Length; l++) {
-                FT = target[l] / c - whitenoise[l];
+                FT[l] = target[l] / c - whitenoise[l];
             }
-
+            
             //V:velocity or time delay, IN:Submissive? DIM:Spherical radius
 
-            for (int h = 0; h < IN.Length; h++) {
-                T[h] = Math.Exp(V / (target[h] + predicted[h])) / Math.Exp(Math.Pow(IN[h], DIM) / V);
+            for (int h = 0; h < whitenoise.Length; h++) {
+                T[h] = Math.Exp(PT[h]) / Math.Exp(FT[h]) / V;
             }
 
             Console.WriteLine("T output");

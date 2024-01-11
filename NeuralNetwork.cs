@@ -99,7 +99,7 @@ namespace Thyme_new
             return finalOutputs;
         }
 
-        public void Train(double[] input, byte[] target, double learningRate)
+        public void Train(double[] input, double[] target, double learningRate)
         {
             Console.WriteLine("beginning training");
             if (input.Length != inputSize || target.Length != outputSize)

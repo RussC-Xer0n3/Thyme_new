@@ -77,14 +77,20 @@ namespace Thyme_new
 
                 // Process the received data and convert it to a double array.
                 double[] processedData = ProcessSatelliteData(responseByte.ToString());
+                double[] targetData = ProcessSatelliteData(responseByte.ToString());
+                Console.WriteLine($"input size {processedData.Length}");
+                Console.WriteLine($"input size {targetData.Length}");
 
                 // Convert the double array to a string for response (for simplicity).
                 string responseString = string.Join(",", processedData);
 
                 // Send the response back to the client.
                 byte[] responseBytes = Encoding.UTF8.GetBytes(responseString);
+                Console.WriteLine($"target size {responseBytes.Length}");
 
                 Console.WriteLine($"Received Byte from Server: {responseBytes}");
+                Console.WriteLine($"Received Byte from Server as processed to double: {processedData}");
+                Console.WriteLine($"Received Byte from Server as double target data: {targetData}");
 
                 // Training the neural network
                 AIHelpers ai = new AIHelpers();
@@ -92,7 +98,7 @@ namespace Thyme_new
                 for (int epoch = 0; epoch < 2; epoch++)
                 {
                     Console.WriteLine("Training started.....");
-                    neuralNetwork.Train(processedData, responseBytes, ai.CalculateMDP(processedData));
+                    neuralNetwork.Train(processedData, targetData, ai.CalculateMDP(processedData));
                     Console.WriteLine($"Epoch N=: {epoch}");
                 }
             }
@@ -107,7 +113,6 @@ namespace Thyme_new
         }
         static void Main()
         {
-
             // Process the received byte (replace this with your actual processing logic).
             NeuralNetwork neuralNetwork = new NeuralNetwork(1, 3, 1);
 
@@ -117,9 +122,8 @@ namespace Thyme_new
             int port = 12345;
             IPAddress localAddr = IPAddress.Parse("127.0.0.1");
             string address = "127.0.0.1";
+            
             // Connect to the server.
-
-
             TCPserver(localAddr, port);
             TCPClient(neuralNetwork, address, port);
             
