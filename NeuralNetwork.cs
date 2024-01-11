@@ -5,6 +5,7 @@ namespace Thyme_new
 {
     public class NeuralNetwork
     {
+        
         private readonly int inputSize;
         private readonly int hiddenSize;
         private readonly int outputSize;
@@ -18,11 +19,13 @@ namespace Thyme_new
 
         public NeuralNetwork(int inputSize, int hiddenSize, int outputSize)
         {
+            Console.WriteLine("building neural network");
             this.inputSize = inputSize;
             this.hiddenSize = hiddenSize;
             this.outputSize = outputSize;
 
             InitializeWeightsAndBiases();
+            Console.WriteLine("Initialising weights and biases");
         }
 
         private void InitializeWeightsAndBiases()
@@ -45,7 +48,7 @@ namespace Thyme_new
                     weights[i, j] = random.NextDouble() - 0.5; // Random values between -0.5 and 0.5
                 }
             }
-
+            Console.WriteLine("weights initialised");
             return weights;
         }
 
@@ -57,7 +60,7 @@ namespace Thyme_new
             {
                 biases[i] = random.NextDouble() - 0.5; // Random values between -0.5 and 0.5
             }
-
+            Console.WriteLine("biases initialised");
             return biases;
         }
 
@@ -98,6 +101,7 @@ namespace Thyme_new
 
         public void Train(double[] input, byte[] target, double learningRate)
         {
+            Console.WriteLine("beginning training");
             if (input.Length != inputSize || target.Length != outputSize)
             {
                 throw new ArgumentException("Input or target size mismatch");

@@ -15,21 +15,6 @@ namespace Thyme_new
         private double V = v();         // constant based on 3d space time
 
         private const double Epsilon = 5E-5;
-        
-
-        // Constructor
-        public Thyme()
-        {
-            // Initialize properties of whitenoise, predicted and target using sockets
-            //Build NN (input qty, hidden qty, output qty)
-            //simple byte data streams with a 40 layer hidden network
-            NeuralNetwork neuralNetwork = new NeuralNetwork(8, 40, 8); 
-            //feed the NN
-            //get result from AI
-            //call calculatethyme
-            //print results
-
-        }
 
         // Methods
         //Estimated time velocity disregarding distance
@@ -53,7 +38,8 @@ namespace Thyme_new
 
             //Need to implement timer and disregard distance
             double V = (ts - ts2) / ((ts3) / 2);
-
+            
+            Console.WriteLine($"Approximate time velocity being calculated as: {V}");
             return V;
         }
 
@@ -67,6 +53,8 @@ namespace Thyme_new
             double[] T = null;
             double c = ThymeHelpers.C(whitenoise, A);
             double V = v();
+
+            Console.WriteLine("CalculateThyme being used...");
 
             if (predicted.Length != target.Length) {
                 throw new ArgumentException("Arrays must be of the same length");
@@ -90,6 +78,7 @@ namespace Thyme_new
                 T[h] = Math.Exp(V / (target[h] + predicted[h])) / Math.Exp(Math.Pow(IN[h], DIM) / V);
             }
 
+            Console.WriteLine("T output");
             return T;
         }
     }
