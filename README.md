@@ -8,7 +8,20 @@ At present unknown, it calculates and should be able to make predictions based o
 At present, it doesn't do anything....
 
 ## what needs to be done?
-Give it some data via a local vm server outputting network data on 127.0.0.1:123 
+Read about diagnostics, error handling, log collection and integrated diagnostics and test cases
+Write diagnostic, error handling and test cases
+Debug
+Read about data collection and streamline the collection process
+implement data collection and streamline it
+Debug
+Write more test cases and integrate more diagnostics for error reporting
+Debug
+Check calculation estimates in the calculus
+Correct calculations
+Run the tests
+Write some more tests
+Give the neural network some data
+Do a write up (essay/dissertation with results and interpretations)
 
 ## why?
 well, to see what happens of course......... On a more serious note, for performance analysis, benchmarking, data analysis correlating to input via output and the predictability of output verses actual future output. Of course it is modifiable, of course you can take a look into it yourself and of course you can modify the code if you want/need to. Just repost and reference please.  
