@@ -9,18 +9,31 @@ At present, it doesn't do anything....
 
 ## what needs to be done?
 Read about diagnostics, error handling, log collection and integrated diagnostics and test cases
+
 Write diagnostic, error handling and test cases
+
 Debug
+
 Read about data collection and streamline the collection process
+
 implement data collection and streamline it
+
 Debug
+
 Write more test cases and integrate more diagnostics for error reporting
+
 Debug
+
 Check calculation estimates in the calculus
+
 Correct calculations
+
 Run the tests
+
 Write some more tests
+
 Give the neural network some data
+
 Do a write up (essay/dissertation with results and interpretations)
 
 ## why?
